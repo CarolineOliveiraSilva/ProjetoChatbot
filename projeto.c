@@ -1,99 +1,84 @@
 #include <stdio.h>
-#include <string.h>
 
-int main() {
-    int seg = 0, ter = 0, qua = 0, qui = 0, sex = 0, sab = 0, dom = 0;
-    int opcao, dia, qtd, atividade;
+int main(){
 
-    do {
-        printf("\n==============================\n");
-        printf("   ROTINA DE ATIVIDADE FÍSICA\n");
-        printf("==============================\n");
-        printf("1 - Registrar Atividade\n");
-        printf("2 - Consultar Atividades por dia\n");
-        printf("3 - Ver Top Day (dia com mais atividades)\n");
-        printf("4 - Sair\n");
-        printf("Escolha uma opção: ");
+    int opcao;
+    char nome[20];
+    int financeiro = 0;
+    int suporte = 0;
+    int comercial = 0;
+    int soucliente = 0;
+    int clientenovo = 0;
+    int sair = 0;
+
+    printf("Óla! Seja bem vindo(a) a nossa central de atentendimento\n");
+    printf("1 - Já sou cliente\n");
+    printf("2 - Quero contratar\n");
+    printf("Digite sua opção: ");
+    scanf("%d", &opcao);
+
+    if (opcao == 1){
+     printf("Digite seu nome: ");
+     scanf("%s", nome);
+     soucliente ++;
+    
+        
+     do{ 
+        printf("\n_____________________________________\n");
+        printf("\nOlá %s! Como podemos te ajudar? \n",nome);
+        printf("Selecione uma das opções\n");
+        printf("\n1 Financeiro \n");
+        printf("2 Suporte técnico \n");
+        printf("3 Comercial\n");
+        printf("4 Sair\n");
+        printf("Opção: ");
         scanf("%d", &opcao);
+        
+        switch (opcao){ 
 
-        switch(opcao) {
-            case 1:
-                printf("\nDigite o dia (1=Segunda, ..., 7=Domingo): ");
-                scanf("%d", &dia);
+        case 1:
+            printf("\nVocê escolheu setor financeiro\n");
+            printf("\nAguarde a atendente entrará em contato!\n");
+            financeiro ++;
+            break;
+        case 2:
 
-                if (dia < 1 || dia > 7) {
-                    printf("Dia inválido!\n");
-                    break;
-                }
+            printf("\nVocê escolheu suporte técnico\n");
+            printf("\nAguarde, encontrando o técnico mais perto da sua residencia.\n");
+            suporte ++;
+            break;
 
-                printf("\nEscolha a atividade:\n");
-                printf("1 - Caminhada\n");
-                printf("2 - Corrida\n");
-                printf("3 - Musculação\n");
-                printf("4 - Natação\n");
-                printf("Opção: ");
-                scanf("%d", &atividade);
+        case 3:
 
-                printf("Quantas vezes essa atividade foi feita? ");
-                scanf("%d", &qtd);
-
-                // Adiciona a quantidade ao dia correspondente
-                switch(dia) {
-                    case 1: seg += qtd; break;
-                    case 2: ter += qtd; break;
-                    case 3: qua += qtd; break;
-                    case 4: qui += qtd; break;
-                    case 5: sex += qtd; break;
-                    case 6: sab += qtd; break;
-                    case 7: dom += qtd; break;
-                }
-
-                // Confirmação
-                switch(atividade) {
-                    case 1: printf("Caminhada registrada!\n"); break;
-                    case 2: printf("Corrida registrada!\n"); break;
-                    case 3: printf("Musculação registrada!\n"); break;
-                    case 4: printf("Natação registrada!\n"); break;
-                    default: printf("Atividade inválida.\n");
-                }
-                break;
-
-            case 2:
-                printf("\nAtividades registradas por dia:\n");
-                printf("Segunda-feira: %d\n", seg);
-                printf("Terça-feira:   %d\n", ter);
-                printf("Quarta-feira:  %d\n", qua);
-                printf("Quinta-feira:  %d\n", qui);
-                printf("Sexta-feira:   %d\n", sex);
-                printf("Sábado:        %d\n", sab);
-                printf("Domingo:       %d\n", dom);
-                break;
-
-            case 3: {
-                // Calcula o Top Day
-                int maior = seg;
-                char top[20] = "Segunda-feira";
-
-                if (ter > maior) { maior = ter; strcpy(top, "Terca-feira"); }
-                if (qua > maior) { maior = qua; strcpy(top, "Quarta-feira"); }
-                if (qui > maior) { maior = qui; strcpy(top, "Quinta-feira"); }
-                if (sex > maior) { maior = sex; strcpy(top, "Sexta-feira"); }
-                if (sab > maior) { maior = sab; strcpy(top, "Sabado"); }
-                if (dom > maior) { maior = dom; strcpy(top, "Domingo"); }
-
-                printf("\n📊 Top Day: %s com %d atividades!\n", top, maior);
-                break;
+            printf("\nVocê escolheu Comercial\n");
+            printf("Entraremos em contato assim que possivel");
+            comercial ++;
+            break;
+        case 4:
+            printf("\nAgradecemos pelo seu contato e, se precisar de algo no futuro, não hesite em nos procurar!\n");
+            printf("Tenha um excelente dia!");
+            sair ++;
+            break;
+    
+            default :
+            printf("\nOpção invalida");
             }
+     }while(opcao !=4);
 
-            case 4:
-                printf("\nEncerrando o programa... Até mais!\n");
-                break;
+    }else{
+        printf("\nSeja bem vindo(a), ficamos felizes por querer ser nosso cliente!\n");
+        printf("\nLogo você receber mais informações para contratar nossos serviços!\n");
+        clientenovo ++;
+    }
+    
+    printf("\nRelátorio de acessos\n");
+    printf("\nJá são clientes: %d vezes\n", soucliente);
+    printf("Querendo contratar: %d clientes\n", clientenovo);
+    printf("Financeiro: %d vezes\n",financeiro);
+    printf("Suporte: %d vezes\n", suporte);
+    printf("Comercial: %d vezes\n", comercial);
+    printf("Saidas: %d vezes\n", sair);
 
-            default:
-                printf("Opção inválida. Tente novamente.\n");
-        }
+  return 0;
 
-    } while (opcao != 4);
-
-    return 0;
 }
