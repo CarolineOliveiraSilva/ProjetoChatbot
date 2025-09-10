@@ -1,4 +1,5 @@
-Central de Atendimento em C
+*Central de Atendimento em C*
+
 Este é um projeto simples em linguagem C que simula uma central de atendimento ao cliente via console. O programa oferece um menu interativo para usuários que já são clientes e para aqueles que desejam contratar os serviços, registrando as interações e exibindo um relatório final ao encerrar.
 
 Sobre o Projeto
