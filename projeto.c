@@ -17,6 +17,13 @@ int main(){
     printf("Digite sua opção: ");
     scanf("%d", &opcao);
 
+    while (opcao != 1 && opcao != 2) {
+        printf("\nOpção inválida! Por favor, escolha uma opção válida.\n");
+        printf("1 - Já sou cliente\n");
+        printf("2 - Quero contratar\n");
+        printf("Digite sua opção: ");
+        scanf("%d", &opcao);
+    }
     if (opcao == 1){
      printf("Digite seu nome: ");
      scanf("%s", nome);
@@ -65,12 +72,6 @@ int main(){
             }
      }while(opcao !=4);
 
-    }else{
-        printf("\nSeja bem vindo(a), ficamos felizes por querer ser nosso cliente!\n");
-        printf("\nLogo você receber mais informações para contratar nossos serviços!\n");
-        clientenovo ++;
-    }
-    
     printf("\nRelátorio de acessos\n");
     printf("\nJá são clientes: %d vezes\n", soucliente);
     printf("Querendo contratar: %d clientes\n", clientenovo);
@@ -79,6 +80,11 @@ int main(){
     printf("Comercial: %d vezes\n", comercial);
     printf("Saidas: %d vezes\n", sair);
 
-  return 0;
+    }else if(opcao == 2 ) {
+        printf("\nSeja bem vindo(a), ficamos felizes por querer ser nosso cliente!\n");
+        printf("\nLogo você receber mais informações para contratar nossos serviços!\n");
+        clientenovo ++;
+    }
 
-}
+    return 0;
+ }
