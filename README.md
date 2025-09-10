@@ -3,9 +3,11 @@
 Este é um projeto simples em linguagem C que simula uma central de atendimento ao cliente via console. O programa oferece um menu interativo para usuários que já são clientes e para aqueles que desejam contratar os serviços, registrando as interações e exibindo um relatório final ao encerrar.
 
 Sobre o Projeto
+
 O objetivo deste projeto é demonstrar o uso de estruturas de controle básicas em C, como if-else, do-while e switch-case, para criar uma aplicação de console interativa. A aplicação guia o usuário através de um menu de atendimento, captura suas escolhas e, ao final da execução, apresenta um resumo das opções selecionadas.
 
 Funcionalidades
+
 Menu Inicial: Distingue entre usuários que já são clientes e novos clientes.
 
 Menu para Clientes: Oferece opções de atendimento para os setores Financeiro, Suporte Técnico e Comercial.
@@ -25,6 +27,7 @@ Quantidade de solicitações para cada setor (Financeiro, Suporte, Comercial).
 Contagem de saídas do sistema.
 
 Como Executar
+
 Para compilar e executar este projeto, você precisará de um compilador C, como o GCC, instalado em seu sistema.
 
 Salve o código: Salve o código-fonte em um arquivo chamado main.c (ou qualquer outro nome de sua preferência com a extensão .c).
