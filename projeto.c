@@ -2,7 +2,7 @@
 
 int main(){
 
-    int opcao;
+    int opcaoprincipal, opcaocliente;
     char nome[20];
     int financeiro = 0;
     int suporte = 0;
@@ -15,16 +15,16 @@ int main(){
     printf("1 - Já sou cliente\n");
     printf("2 - Quero contratar\n");
     printf("Digite sua opção: ");
-    scanf("%d", &opcao);
+    scanf("%d", &opcaoprincipal);
 
-    while (opcao != 1 && opcao != 2) {
+    while (opcaoprincipal != 1 && opcaoprincipal != 2) {
         printf("\nOpção inválida! Por favor, escolha uma opção válida.\n");
         printf("1 - Já sou cliente\n");
         printf("2 - Quero contratar\n");
         printf("Digite sua opção: ");
-        scanf("%d", &opcao);
+        scanf("%d", &opcaoprincipal);
     }
-    if (opcao == 1){
+    if (opcaoprincipal == 1){
      printf("Digite seu nome: ");
      scanf("%s", nome);
      soucliente ++;
@@ -39,9 +39,9 @@ int main(){
         printf("3 Comercial\n");
         printf("4 Sair\n");
         printf("Opção: ");
-        scanf("%d", &opcao);
+        scanf("%d", &opcaocliente);
         
-        switch (opcao){ 
+        switch (opcaocliente){ 
 
         case 1:
             printf("\nVocê escolheu setor financeiro\n");
@@ -70,7 +70,7 @@ int main(){
             default :
             printf("\nOpção invalida");
             }
-     }while(opcao !=4);
+     }while(opcaocliente !=4);
 
     printf("\nRelátorio de acessos\n");
     printf("\nJá são clientes: %d vezes\n", soucliente);
@@ -80,7 +80,7 @@ int main(){
     printf("Comercial: %d vezes\n", comercial);
     printf("Saidas: %d vezes\n", sair);
 
-    }else if(opcao == 2 ) {
+    }else if(opcaocliente == 2 ) {
         printf("\nSeja bem vindo(a), ficamos felizes por querer ser nosso cliente!\n");
         printf("\nLogo você receber mais informações para contratar nossos serviços!\n");
         clientenovo ++;
